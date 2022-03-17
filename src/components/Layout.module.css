@@ -1,0 +1,14 @@
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  width: 800px;
+  flex-direction: column;
+  padding: 20px 20px 0 20px;
+  background-color: #efefef;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

@@ -5,12 +5,17 @@ import { Home } from "./pages/Home";
 import reportWebVitals from "./reportWebVitals";
 import { client } from "./graphql";
 import { ApolloProvider } from "@apollo/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <Home />
-    </ApolloProvider>
+    <BrowserRouter>
+      <ApolloProvider client={client}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </ApolloProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
