@@ -1,0 +1,11 @@
+.info_toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.info_back_button {
+  color: #5bceb1;
+  font-size: 3rem;
+}
