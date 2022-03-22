@@ -11,7 +11,6 @@ export const Home = () => {
 
   if (loading) return <div>Loading...</div>;
 
-  console.log(data.contact);
   return (
     <Layout>
       <Toolbar>
