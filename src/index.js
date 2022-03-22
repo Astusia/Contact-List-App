@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { client } from "./graphql";
 import { ApolloProvider } from "@apollo/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Contact } from "./pages/Contact";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.render(
       <ApolloProvider client={client}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/contact/:id" element={<Contact />} />
         </Routes>
       </ApolloProvider>
     </BrowserRouter>
