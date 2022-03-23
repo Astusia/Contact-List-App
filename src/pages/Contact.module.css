@@ -2,3 +2,69 @@
   color: #5bceb1;
   font-size: 3rem;
 }
+
+.info_section1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.info_section1_avatar {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background-color: #5bceb1;
+  margin-bottom: 20px;
+}
+
+.info_section1_avatar img {
+  object-fit: cover;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.info_secion1_name {
+  margin-bottom: 0;
+}
+
+.info_section2_row {
+  display: flex;
+  padding: 0 20px;
+  background-color: #d4d4d4;
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.info_secion2_icon {
+  margin-right: 15px;
+  font-size: 2rem;
+  color: #5bceb1;
+}
+
+.dialog_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dialog_box_buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.dialog_box_buttons button {
+  background-color: #d4d4d4;
+  margin: 5px;
+  padding: 10px 30px;
+}
+
+.dialog_box_buttons button:hover {
+  background-color: #5bceb1;
+  transition: 500ms;
+}
