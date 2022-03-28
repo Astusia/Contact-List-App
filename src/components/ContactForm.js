@@ -5,8 +5,8 @@ import { Layout } from "./Layout";
 import { BackButton, Toolbar } from "./Toolbar";
 
 const initial = {
-  avatar: "",
-  birthday: "",
+  image: "",
+  dob: "",
   email: "",
   name: "",
   phone: "",
@@ -36,8 +36,8 @@ const ContactForm = ({ initialValues = initial, handleSubmit, buttonName }) => {
       >
         <Input
           onChange={handleChange}
-          name="avatar"
-          value={contact.avatar}
+          name="image"
+          value={contact.image}
           label="Image URL:"
           placeholder="https://..."
         />
@@ -50,8 +50,8 @@ const ContactForm = ({ initialValues = initial, handleSubmit, buttonName }) => {
         />
         <Input
           onChange={handleChange}
-          name="birthday"
-          value={contact.birthday}
+          name="dob"
+          value={contact.dob}
           label="Date of Birth:"
           placeholder="dd/mm/yyyy"
         />

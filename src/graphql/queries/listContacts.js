@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const listContacts = gql`
-  query MyQuery {
+  query ListContacts {
     contact {
       dob
       email
