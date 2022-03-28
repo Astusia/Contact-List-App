@@ -1,0 +1,22 @@
+.back_button {
+  color: #5bceb1;
+  font-size: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add_button {
+  text-align: center;
+  width: 200px;
+  background-color: #8ed3c2;
+  margin-bottom: 20px;
+  height: 60px;
+  border-radius: 5px;
+  padding: 0 5px;
+  font-size: 2rem;
+  color: rgba(49, 49, 49, 0.945);
+  font-weight: bold;
+}

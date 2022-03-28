@@ -7,6 +7,7 @@ import { client } from "./graphql";
 import { ApolloProvider } from "@apollo/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Contact } from "./pages/Contact";
+import { AddContact } from "./pages/AddContact";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact/:id" element={<Contact />} />
+          <Route path="/contact/add" element={<AddContact />} />
         </Routes>
       </ApolloProvider>
     </BrowserRouter>
