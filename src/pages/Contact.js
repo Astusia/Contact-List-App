@@ -1,8 +1,9 @@
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useNavigate, useParams } from "react-router-dom";
 import { Icon } from "../components/Icon";
 import { Layout } from "../components/Layout";
 import { BackButton, Toolbar } from "../components/Toolbar";
+import { deleteContact } from "../graphql/mutations/deleteContact";
 import { getContact } from "../graphql/queries/getContact";
 import styles from "./Contact.module.css";
 
@@ -10,6 +11,7 @@ export const Contact = () => {
   const { id } = useParams();
   const { loading, data } = useQuery(getContact, { variables: { id } });
   const navigate = useNavigate();
+  const [mutate] = useMutation(deleteContact);
 
   if (loading) return <div>Loading...</div>;
 
@@ -28,8 +30,15 @@ export const Contact = () => {
           </button>
           <button
             className={styles.buttons}
-            // onClick={() => setOpen(true)}
-            // className={styles.info_back_button}
+            onClick={async () => {
+              try {
+                await mutate({
+                  variables: { id },
+                  refetchQueries: ["ListContacts"],
+                });
+                navigate("/");
+              } catch (e) {}
+            }}
           >
             <Icon>delete</Icon>
           </button>
