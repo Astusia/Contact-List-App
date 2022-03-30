@@ -8,6 +8,7 @@ import { ApolloProvider } from "@apollo/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Contact } from "./pages/Contact";
 import { AddContact } from "./pages/AddContact";
+import { EditContact } from "./pages/EditContact";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.render(
           <Route path="/" element={<Home />} />
           <Route path="/contact/:id" element={<Contact />} />
           <Route path="/contact/add" element={<AddContact />} />
+          <Route path="/contact/:id/edit" element={<EditContact />} />
         </Routes>
       </ApolloProvider>
     </BrowserRouter>
