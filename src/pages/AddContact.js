@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export const AddContact = () => {
   const navigate = useNavigate();
-  const [mutate] = useMutation(createContact);
+  const [mutate, { loading }] = useMutation(createContact);
 
   return (
     <ContactForm
@@ -17,7 +17,7 @@ export const AddContact = () => {
         });
         navigate("/");
       }}
-      buttonName="Add"
+      buttonName={loading ? "Adding..." : "Add"}
     />
   );
 };
