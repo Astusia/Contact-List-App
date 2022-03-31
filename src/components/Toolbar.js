@@ -9,7 +9,9 @@ export const Toolbar = ({ children }) => {
 export const BackButton = () => {
   return (
     <Link to="/" data-testid="link">
-      <Icon className={styles.info_back_button}>arrow_back_ios</Icon>
+      <Icon tooltip="Back" className={styles.info_back_button}>
+        arrow_back_ios
+      </Icon>
     </Link>
   );
 };
