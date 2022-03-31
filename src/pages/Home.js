@@ -18,7 +18,9 @@ export const Home = () => {
       <Toolbar>
         <h1>Contact List</h1>
         <button onClick={() => navigate("/contact/add")}>
-          <Icon className={styles.toolbar_icon}>person_add</Icon>
+          <Icon tooltip="Add new contact" className={styles.toolbar_icon}>
+            person_add
+          </Icon>
         </button>
       </Toolbar>
       {data.contact.map((user, key) => (

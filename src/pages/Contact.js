@@ -26,7 +26,7 @@ export const Contact = () => {
             className={styles.buttons}
             onClick={() => navigate(`/contact/${id}/edit`)}
           >
-            <Icon>edit</Icon>
+            <Icon tooltip="Edit contact">edit</Icon>
           </button>
           <button
             className={styles.buttons}
@@ -40,7 +40,7 @@ export const Contact = () => {
               } catch (e) {}
             }}
           >
-            <Icon>delete</Icon>
+            <Icon tooltip="Delete contact">delete</Icon>
           </button>
         </div>
       </Toolbar>
