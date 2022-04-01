@@ -7,15 +7,48 @@ import { deleteContact } from "../graphql/mutations/deleteContact";
 import { getContact } from "../graphql/queries/getContact";
 import styles from "./Contact.module.css";
 
+const Loading = () => {
+  return (
+    <Layout>
+      <Toolbar>
+        <BackButton />
+        <div>
+          <button className={styles.buttons}>
+            <Icon>edit</Icon>
+          </button>
+          <button className={styles.buttons}>
+            <Icon>delete</Icon>
+          </button>
+        </div>
+      </Toolbar>
+      <div className={styles.info_section1}>
+        <div className={styles.info_section1_avatar}>
+          <div className={styles.avatarLoading}></div> {/* Loading CSS */}
+        </div>
+        <div className={styles.loadingName}></div> {/* Loading CSS */}
+        <div className={styles.loadingBirthday}></div> {/* Loading CSS */}
+      </div>
+      <div className={styles.info_section2}>
+        <div className={styles.info_section2_row}>
+          <Icon className={styles.info_secion2_icon}>phone</Icon>{" "}
+          <div>Loading phone</div>
+        </div>
+        <div className={styles.info_section2_row}>
+          <Icon className={styles.info_secion2_icon}>email</Icon>{" "}
+          <div>Loading email</div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
 export const Contact = () => {
   const { id } = useParams();
   const { loading, data } = useQuery(getContact, { variables: { id } });
   const navigate = useNavigate();
   const [mutate] = useMutation(deleteContact);
 
-  if (loading) return <div>Loading...</div>;
-
-  console.log(data.contact_by_pk);
+  if (loading) return <Loading />;
 
   return (
     <Layout>
