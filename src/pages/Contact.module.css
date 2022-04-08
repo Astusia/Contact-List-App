@@ -68,35 +68,3 @@
   background-color: #5bceb1;
   transition: 500ms;
 }
-
-/* Loading CSS */
-
-.avatarLoading {
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  background-color: #d4d4d4;
-  margin-bottom: 20px;
-}
-
-.loadingName {
-  display: flex;
-  padding: 0 20px;
-  background-color: #d4d4d4;
-  width: 300px;
-  height: 44px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  align-items: center;
-}
-
-.loadingBirthday {
-  display: flex;
-  padding: 0 20px;
-  background-color: #d4d4d4;
-  width: 200px;
-  height: 43px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  align-items: center;
-}

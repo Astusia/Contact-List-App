@@ -6,6 +6,7 @@ import { BackButton, Toolbar } from "../components/Toolbar";
 import { deleteContact } from "../graphql/mutations/deleteContact";
 import { getContact } from "../graphql/queries/getContact";
 import styles from "./Contact.module.css";
+import { AnimatedLoader } from "../components/AnimatedLoader";
 
 const Loading = () => {
   return (
@@ -23,19 +24,29 @@ const Loading = () => {
       </Toolbar>
       <div className={styles.info_section1}>
         <div className={styles.info_section1_avatar}>
-          <div className={styles.avatarLoading}></div> {/* Loading CSS */}
+          <AnimatedLoader
+            width={250}
+            height={250}
+            margin="0 0 20px 0"
+            borderRadius="50%"
+          />
+          {/* Loading CSS */}
         </div>
-        <div className={styles.loadingName}></div> {/* Loading CSS */}
-        <div className={styles.loadingBirthday}></div> {/* Loading CSS */}
+        <AnimatedLoader width={300} height={44} margin="0 0 20px 0" />
+        {/* Loading CSS */}
+        <AnimatedLoader width={200} height={44} margin="0 0 20px 0" />
+        {/* Loading CSS */}
       </div>
       <div className={styles.info_section2}>
         <div className={styles.info_section2_row}>
           <Icon className={styles.info_secion2_icon}>phone</Icon>{" "}
-          <div>Loading phone</div>
+          <AnimatedLoader width={"100%"} height={60} margin="0 -20px 0 0" />
+          {/* Loading CSS */}
         </div>
         <div className={styles.info_section2_row}>
           <Icon className={styles.info_secion2_icon}>email</Icon>{" "}
-          <div>Loading email</div>
+          <AnimatedLoader width={"100%"} height={60} margin="0 -20px 0 0" />
+          {/* Loading CSS */}
         </div>
       </div>
     </Layout>
