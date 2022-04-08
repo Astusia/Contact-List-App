@@ -6,12 +6,38 @@ import { Item } from "../components/Item";
 import { Icon } from "../components/Icon";
 import styles from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
+import { AnimatedLoader } from "../components/AnimatedLoader";
+
+const Loading = () => {
+  return (
+    <>
+      {/* Smart way to repeat multiple things
+      {Array(7)
+        .fill({})
+        .map((_, index) => (
+          <AnimatedLoader
+            key={index}
+            height={60}
+            width={"100%"}
+            margin={"0 0 20px 0"}
+          />
+        ))} */}
+
+      <AnimatedLoader height={60} width={"100%"} margin={"0 0 20px 0"} />
+      <AnimatedLoader height={60} width={"100%"} margin={"0 0 20px 0"} />
+      <AnimatedLoader height={60} width={"100%"} margin={"0 0 20px 0"} />
+      <AnimatedLoader height={60} width={"100%"} margin={"0 0 20px 0"} />
+      <AnimatedLoader height={60} width={"100%"} margin={"0 0 20px 0"} />
+      <AnimatedLoader height={60} width={"100%"} margin={"0 0 20px 0"} />
+      <AnimatedLoader height={60} width={"100%"} margin={"0 0 20px 0"} />
+      <AnimatedLoader height={60} width={"100%"} margin={"0 0 20px 0"} />
+    </>
+  );
+};
 
 export const Home = () => {
   const { data, loading } = useQuery(listContacts);
   const navigate = useNavigate();
-
-  if (loading) return <div>Loading...</div>;
 
   return (
     <Layout>
@@ -23,9 +49,11 @@ export const Home = () => {
           </Icon>
         </button>
       </Toolbar>
-      {data.contact.map((user, key) => (
-        <Item key={key} user={user} />
-      ))}
+      {loading ? (
+        <Loading />
+      ) : (
+        data.contact.map((user, key) => <Item key={key} user={user} />)
+      )}
     </Layout>
   );
 };
