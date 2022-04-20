@@ -15,8 +15,7 @@ function createClient() {
     return {
       headers: {
         ...headers,
-        "x-hasura-admin-secret":
-          "6HIF9hYlyFFTpQPsaKsYn0oJODVj7iuI0LD90uQYslonXMCRg2lS263xJQhQgFcO",
+        "x-hasura-admin-secret": process.env.REACT_APP_HASURA_SECRET,
       },
     };
   });

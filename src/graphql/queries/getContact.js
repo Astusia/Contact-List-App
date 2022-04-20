@@ -9,6 +9,7 @@ export const getContact = gql`
       image
       name
       phone
+      notes
     }
   }
 `;
