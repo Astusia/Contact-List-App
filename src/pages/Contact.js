@@ -87,6 +87,7 @@ export const Contact = () => {
                   await mutate({
                     variables: { id },
                     refetchQueries: ["ListContacts"],
+                    fetchPolicy: "network-only",
                   });
                   navigate("/");
                 } catch (e) {}
