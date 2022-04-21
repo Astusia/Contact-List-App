@@ -17,7 +17,7 @@ export const EditContact = () => {
       handleSubmit={async ({ __typename, ...contact }) => {
         await mutate({
           variables: { pk_columns: { id: contact.id }, _set: contact },
-          refetchQueries: ["ListContacts"],
+          refetchQueries: ["ListContacts", "GetContact"],
         });
         navigate(`/contact/${id}`);
       }}

@@ -68,3 +68,11 @@
   background-color: #5bceb1;
   transition: 500ms;
 }
+
+.notes {
+  display: flex;
+  align-items: flex-start;
+  height: auto;
+  padding: 10px 15px;
+  line-height: 1.5rem;
+}

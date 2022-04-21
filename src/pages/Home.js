@@ -52,7 +52,9 @@ export const Home = () => {
       {loading ? (
         <Loading />
       ) : (
-        data.contact.map((user, key) => <Item key={key} user={user} />)
+        data.contact_aggregate.nodes.map((user, key) => (
+          <Item key={key} user={user} />
+        ))
       )}
     </Layout>
   );

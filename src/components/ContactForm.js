@@ -10,6 +10,7 @@ const initial = {
   email: "",
   name: "",
   phone: "",
+  notes: "",
 };
 
 const ContactForm = ({ initialValues = initial, handleSubmit, buttonName }) => {
@@ -46,7 +47,7 @@ const ContactForm = ({ initialValues = initial, handleSubmit, buttonName }) => {
           name="name"
           value={contact.name}
           label="Full Name:"
-          placeholder="Jack Sparrow"
+          placeholder="Name Surname"
         />
         <Input
           onChange={handleChange}
@@ -60,7 +61,7 @@ const ContactForm = ({ initialValues = initial, handleSubmit, buttonName }) => {
           name="phone"
           value={contact.phone}
           label="Phone:"
-          placeholder="01903000111"
+          placeholder="01002000123"
         />
         <Input
           onChange={handleChange}
@@ -69,6 +70,16 @@ const ContactForm = ({ initialValues = initial, handleSubmit, buttonName }) => {
           label="Email:"
           placeholder="email@gmail.com"
         />
+
+        <div className={styles.textarea}>
+          <label>Notes:</label>
+          <textarea
+            name="notes"
+            value={contact.notes ?? ""}
+            onChange={handleChange}
+          />
+        </div>
+
         <button className={styles.add_button} type="submit">
           {buttonName}
         </button>
