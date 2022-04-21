@@ -86,8 +86,6 @@ export const Contact = () => {
                 try {
                   await mutate({
                     variables: { id },
-                    refetchQueries: ["ListContacts"],
-                    fetchPolicy: "network-only",
                   });
                   navigate("/");
                 } catch (e) {}
@@ -117,7 +115,14 @@ export const Contact = () => {
         </Toolbar>
         <div className={styles.info_section1}>
           <div className={styles.info_section1_avatar}>
-            <img src={data.contact_by_pk.image} alt="avatar" />
+            <img
+              src={data.contact_by_pk.image}
+              alt="avatar"
+              onError={({ currentTarget }) => {
+                currentTarget.onerror = null; // prevents looping
+                currentTarget.src = "/img_not_found.png";
+              }}
+            />
           </div>
           <h1 className={styles.info_secion1_name}>
             {data.contact_by_pk.name}
