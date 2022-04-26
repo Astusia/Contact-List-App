@@ -19,6 +19,7 @@ export const EditContact = () => {
           variables: { pk_columns: { id: contact.id }, _set: contact },
           refetchQueries: ["ListContacts", "GetContact"],
           awaitRefetchQueries: true,
+          fetchPolicy: "network-only",
         });
         navigate(`/contact/${id}`);
       }}

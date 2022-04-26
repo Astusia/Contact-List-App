@@ -15,6 +15,7 @@ export const AddContact = () => {
           variables: { object: { id: v4(), ...contact } },
           refetchQueries: ["ListContacts"],
           awaitRefetchQueries: true,
+          fetchPolicy: "network-only",
         });
         navigate("/");
       }}

@@ -88,6 +88,7 @@ export const Contact = () => {
                     variables: { id },
                     refetchQueries: ["ListContacts"],
                     awaitRefetchQueries: true,
+                    fetchPolicy: "network-only",
                   });
                   navigate("/");
                 } catch (e) {}
