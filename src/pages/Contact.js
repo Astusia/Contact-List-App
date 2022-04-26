@@ -86,6 +86,8 @@ export const Contact = () => {
                 try {
                   await mutate({
                     variables: { id },
+                    refetchQueries: ["ListContacts"],
+                    awaitRefetchQueries: true,
                   });
                   navigate("/");
                 } catch (e) {}

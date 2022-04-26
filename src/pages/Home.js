@@ -36,9 +36,7 @@ const Loading = () => {
 };
 
 export const Home = () => {
-  const { data, loading } = useQuery(listContacts, {
-    fetchPolicy: "network-only",
-  });
+  const { data, loading } = useQuery(listContacts);
   const navigate = useNavigate();
 
   return (

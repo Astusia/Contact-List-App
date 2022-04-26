@@ -13,6 +13,8 @@ export const AddContact = () => {
       handleSubmit={async (contact) => {
         await mutate({
           variables: { object: { id: v4(), ...contact } },
+          refetchQueries: ["ListContacts"],
+          awaitRefetchQueries: true,
         });
         navigate("/");
       }}

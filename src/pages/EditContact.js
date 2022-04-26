@@ -18,6 +18,7 @@ export const EditContact = () => {
         await mutate({
           variables: { pk_columns: { id: contact.id }, _set: contact },
           refetchQueries: ["ListContacts", "GetContact"],
+          awaitRefetchQueries: true,
         });
         navigate(`/contact/${id}`);
       }}
