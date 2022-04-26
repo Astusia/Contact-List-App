@@ -54,8 +54,16 @@
 }
 
 .dialog_box_buttons {
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+@media (min-width: 700px) {
+  .dialog_box_buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 .dialog_box_buttons button {
