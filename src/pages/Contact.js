@@ -87,8 +87,9 @@ export const Contact = () => {
                   await mutate({
                     variables: { id },
                     refetchQueries: ["ListContacts"],
-                    awaitRefetchQueries: true,
-                    fetchPolicy: "network-only",
+                    onQueryUpdated(observableQuery) {
+                      return observableQuery.refetch();
+                    },
                   });
                   navigate("/");
                 } catch (e) {}

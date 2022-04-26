@@ -18,8 +18,9 @@ export const EditContact = () => {
         await mutate({
           variables: { pk_columns: { id: contact.id }, _set: contact },
           refetchQueries: ["ListContacts", "GetContact"],
-          awaitRefetchQueries: true,
-          fetchPolicy: "network-only",
+          onQueryUpdated(observableQuery) {
+            return observableQuery.refetch();
+          },
         });
         navigate(`/contact/${id}`);
       }}
