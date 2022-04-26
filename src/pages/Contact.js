@@ -11,6 +11,7 @@ import Dialog from "@reach/dialog";
 import { useState } from "react";
 import "@reach/dialog/styles.css";
 import cn from "classnames";
+import { listContacts } from "../graphql/queries/listContacts";
 
 const Loading = () => {
   return (
@@ -86,7 +87,7 @@ export const Contact = () => {
                 try {
                   await mutate({
                     variables: { id },
-                    refetchQueries: ["ListContacts"],
+                    refetchQueries: [listContacts],
                     awaitRefetchQueries: true,
                     fetchPolicy: "network-only",
                   });
