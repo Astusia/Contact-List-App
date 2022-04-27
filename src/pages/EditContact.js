@@ -3,7 +3,6 @@ import ContactForm from "../components/ContactForm";
 import { useNavigate, useParams } from "react-router-dom";
 import { editContact } from "../graphql/mutations/editContact";
 import { getContact } from "../graphql/queries/getContact";
-import { listContacts } from "../graphql/queries/listContacts";
 
 export const EditContact = () => {
   const navigate = useNavigate();
@@ -18,9 +17,10 @@ export const EditContact = () => {
       handleSubmit={async ({ __typename, ...contact }) => {
         await mutate({
           variables: { pk_columns: { id: contact.id }, _set: contact },
-          refetchQueries: [listContacts, "GetContact"],
-          awaitRefetchQueries: true,
-          fetchPolicy: "network-only",
+          refetchQueries: ["ListContacts", "GetContact"],
+          onQueryUpdated(observableQuery) {
+            return observableQuery.refetch();
+          },
         });
         navigate(`/contact/${id}`);
       }}
