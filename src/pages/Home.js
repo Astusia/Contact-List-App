@@ -45,7 +45,10 @@ export const Home = () => {
     <Layout>
       <Toolbar>
         <h1>Contact List</h1>
-        <button onClick={() => navigate("/contact/add")}>
+        <button
+          className={styles.button}
+          onClick={() => navigate("/contact/add")}
+        >
           <Icon tooltip="Add new contact" className={styles.toolbar_icon}>
             person_add
           </Icon>
