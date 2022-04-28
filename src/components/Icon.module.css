@@ -58,10 +58,16 @@
 }
 
 .icon:hover .tooltip {
-  display: block;
+  display: none;
   visibility: visible;
   animation: tooltipkeys 1s 1;
   opacity: 1;
+}
+
+@media (min-width: 700px) {
+  .icon:hover .tooltip {
+    display: block;
+  }
 }
 
 @keyframes tooltipkeys {

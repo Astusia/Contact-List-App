@@ -8,6 +8,8 @@
 }
 
 .animatedLoader {
+  display: flex;
+  flex: 0 0 auto;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
