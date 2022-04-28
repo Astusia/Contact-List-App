@@ -72,6 +72,7 @@
   background-color: #d4d4d4;
   margin: 5px;
   padding: 10px 30px;
+  color: black;
 }
 
 .dialog_box_buttons button:hover {
